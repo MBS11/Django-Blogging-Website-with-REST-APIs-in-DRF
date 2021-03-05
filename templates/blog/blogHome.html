@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %} BlogHome {% endblock title %}
+ 
+    {% block js %}
+      <script>
+      let previews=document.getElementsByClassName('preview');
+      Array.from(previews).forEach((element))=>{
+          element.innerHTML=element.innerText;
+      };)
+      
+      {% endblock js %}
+      
+{% block blogactive %} active {% endblock blogactive %} 
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block css %}
+    <style>
+    body, html {
+      height: 175%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #777;
+    }
+    
+    .bgimg-1 {
+      position: relative;
+      opacity: 0.75;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+    }
+    .bgimg-1 {
+      background-image: url("{% static 'img/pascal-debrunner-1WQ5RZuH9xo-unsplash.jpg'%}");
+      height: 100%;
+    }</style>
+    {% endblock %}
+ </head>
+
+{% block body %}
+<div class="bgimg-1">
+<div class="container">
+    <h2><a class="text-light">Articles by iBLOGr :</a></h2>
+    {% for post in allPosts  %}
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative bg-info">
+        <div class="col p-4 d-flex flex-column position-static ">
+            <strong class="d-inline-block mb-2 text-light"><a class="text-dark">Article  by </a>{{post.author}} ({{post.views}})</strong>
+            <h3 class="mb-0"> <a class="text-light" href="/blog/{{post.slug}}"><i>{{post.title}} </i></a> </h3>
+            <div class="mb-1 text-muted">{{post.datetime}}</div>
+            <hr>
+            <p class="card-text mb-auto "><a class="text-dark">{{post.material|safe |truncatechars:200}}</a></p>
+            <div class="my-2">
+            	<a href="/blog/{{post.slug}}" role="button" class="btn btn-warning">Continue reading</a>
+            </div>
+            
+        </div>
+        <div class="col-auto d-none d-lg-block">
+                    <img src="/{{post.thumbnail}}" class="bd-placeholder-img" width="225" height="250" aria-label="Placeholder: Thumbnail">
+                </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+ {% endblock %}
+
+
+
+
+
+
+ 

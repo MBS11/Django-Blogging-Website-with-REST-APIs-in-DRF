@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %} About Us{% endblock title %}
+{% block aboutactive %} active {% endblock aboutactive %} 
+
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block css %}
+    <style>
+    .jumbotron{
+    background: url("{% static 'img/cv.jpg'%}") no-repeat center center; 
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+    </style>
+    {% endblock %}
+</head>
+
+{% block body %}
+<main role="main">
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3"><b>Hello, world!</b></h1>
+        <h4 class="display-3">About Us</h4>
+        <hr class="my-4 bg-white">
+        <p><a class="text-white"><b>iBLOGr</b> is an online blog website. A blog (a truncation of "weblog")[1] is a discussion or informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries (posts). Posts are typically displayed in reverse chronological order, so that the most recent post appears first, at the top of the web page. Until 2009, blogs were usually the work of a single individual,[citation needed] occasionally of a small group, and often covered a single subject or topic. In the 2010s, "multi-author blogs" (MABs) emerged, featuring the writing of multiple authors and sometimes professionally edited. MABs from newspapers, other media outlets, universities, think tanks, advocacy groups, and similar institutions account for an increasing quantity of blog traffic. The rise of Twitter and other "microblogging" systems helps integrate MABs and single-author blogs into the news media. Blog can also be used as a verb, meaning to maintain or add content to a blog. 'Blog' and 'blogging' are now loosely used for content creation and sharing on social media, especially when the content is long-form and one creates and shares content on regular basis. So, one could be maintaining a blog on Facebook or blogging on Instagram.The evolution of electronic and software tools to facilitate the production and maintenance of Web articles posted in reverse chronological order made the publishing process feasible to a much larger and less technically-inclined population. Ultimately, this resulted in the distinct class of online publishing that produces blogs we recognize today. For instance, the use of some sort of browser-based software is now a typical aspect of "blogging". Blogs can be hosted by dedicated blog hosting services, on regular web hosting services, or run using blog software.</a></p>
+     
+     <p><a class="btn btn-outline-warning btn-lg " href="/contact" role="button"><b>Contact Us &raquo;</b></a></p>
+    </div>
+  </div>
+
+      <div class="container marketing">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="/static/img/aru.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+        <div class="my-3">
+        <h2>Arushi</h2>
+        <p>Hi! I am Arushi, just an amateur penning down her world in few words.This blog is a medium for me to convey my thoughts,pen down my emotions and tell all that i could never speak about.</p>
+      </div>
+      <hr>
+      </div>
+      
+      <div class="col-lg-6">
+        <img src="/static/img/mbs.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em"></text></img>
+        <div class="my-3">
+        <h2>Mohd. Bilal</h2>
+        <p>Hi! I'm Bilal, the creator, coder and designer of this iBLOGr blogging website. I've written both the front-end as  well as the back-end codes of this website. I'm also the admin of this website.</p>
+    </div>
+    <hr>
+    </div>
+    
+ {% endblock %}

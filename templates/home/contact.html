@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact Us{% endblock title %}
+{% block contactactive %} active {% endblock contactactive %} 
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block css %}
+    <style>
+    body, html {
+      height: 96.3%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #777;
+    }
+    
+    .bgimg-1 {
+      position: relative;
+      opacity: 0.75;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    
+    }
+    .bgimg-1 {
+      background-image: url("{% static 'img/ales-krivec-4miBe6zg5r0-unsplash.jpg'%}");
+      height: 100%;
+    }</style>
+    {% endblock %}
+ </head>
+
+{% block body %}
+<div class="bgimg-1">
+<div class="container ">
+<h3><a class="text-dark">Contact iBLOGr Admin</a></h3>
+<form action="/contact/" method="post">
+{% csrf_token %}
+  <div class="form-group">
+    <label for="name"><a class="text-dark">Name</a></label>
+    <input type="text" class="form-control" id="name" name="name"aria-describedby="name">
+  </div>
+
+  <div class="form-group">
+    <label for="email"><a class="text-dark">Email address</a></label>
+    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    <small id="emailHelp" class="form-text text-muted"><a class="text-dark">We'll never share your email with anyone else.</a></small>
+  </div>
+
+  <div class="form-group">
+    <label for="phone"><a class="text-dark">Phone Number</a></label>
+    <input type="tel" class="form-control" id="phone" name="phone">
+  </div>
+
+  <div class="form-group">
+    <label for="content"><a class="text-dark">Describe your issue :</a></label>
+    <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</div>
+</div>
+ {% endblock %}
