@@ -6,8 +6,14 @@ from rest_framework.permissions import IsAuthenticated
 
 
 
-class CategoryModelViewSet(viewsets.ModelViewSet):
+class ProfileModelViewSet(viewsets.ModelViewSet):
     queryset=Profile.objects.all()
     serializer_class=ProfileSerializer
+    authentication_classes=[BasicAuthentication]
+    permission_classes=[IsAuthenticated]
+
+class ContactModelViewSet(viewsets.ModelViewSet):
+    queryset=Contact.objects.all()
+    serializer_class=ContactSerializer
     authentication_classes=[BasicAuthentication]
     permission_classes=[IsAuthenticated]

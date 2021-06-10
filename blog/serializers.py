@@ -10,4 +10,9 @@ class CategorySerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model=Post
-        fields=['sno','title','timeStamp','author_id','slug','thumbnail','material','category']
+        fields=['sno','title','timeStamp','author_id','slug','thumbnail','material','category','views']
+
+class BCmntSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=BlogComment
+        fields=['sno','comment','user','post','parent','timestamp']

@@ -5,7 +5,8 @@ from . import apiViews
 from rest_framework.routers import DefaultRouter
 
 router=DefaultRouter()
-router.register('UserProfile-api', apiViews.CategoryModelViewSet,basename='profile')
+router.register('UserProfile-api', apiViews.ProfileModelViewSet,basename='profile')
+router.register('ContactUs-api', apiViews.ContactModelViewSet,basename='contact')
 
 urlpatterns = [
     path('', views.home, name='home'),

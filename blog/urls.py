@@ -7,6 +7,7 @@ from rest_framework.routers import DefaultRouter
 router=DefaultRouter()
 router.register('Category-api', apiViews.CategoryModelViewSet,basename='category')
 router.register('Post-api', apiViews.PostModelViewSet,basename='post')
+router.register('Comments-api', apiViews.BCmntModelViewSet,basename='comment')
 
 urlpatterns = [
      path('postComment', views.postComment, name="postComment"),

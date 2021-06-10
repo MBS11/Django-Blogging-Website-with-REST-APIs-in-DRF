@@ -12,10 +12,16 @@ class CategoryModelViewSet(viewsets.ModelViewSet):
     authentication_classes=[BasicAuthentication]
     permission_classes=[IsAuthenticated]
 
+class BCmntModelViewSet(viewsets.ModelViewSet):
+    queryset=BlogComment.objects.all()
+    serializer_class=BCmntSerializer
+    authentication_classes=[BasicAuthentication]
+    permission_classes=[IsAuthenticated]
+
 class PostModelViewSet(viewsets.ModelViewSet):
     queryset=Post.objects.all()
     serializer_class=PostSerializer
     authentication_classes=[BasicAuthentication]
     permission_classes=[IsAuthenticated]
     filter_backends=[SearchFilter]
-    search_fields=['category']
+    search_fields=['category','title','slug']
